@@ -1,0 +1,5 @@
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\RuntimeParseLib\bin\Release\RuntimeParseLib.dll
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\RuntimeParseLib\bin\Release\RuntimeParseLib.pdb
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\RuntimeParseLib\obj\Release\RuntimeParseLib.dll
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\RuntimeParseLib\obj\Release\RuntimeParseLib.pdb
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\RuntimeParseLib\obj\Release\RuntimeParseLib.csprojResolveAssemblyReference.cache
