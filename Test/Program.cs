@@ -1,6 +1,4 @@
-﻿//Todo: It is imperetive that I do much extensive testing on this new library I wrote,
-//to make sure it can handle all sorts of different syntaxes, and to see how quickly it lexes
-//them.
+﻿
 
 using System;
 using System.Collections.Generic;
