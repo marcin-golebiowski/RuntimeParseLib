@@ -1,0 +1,5 @@
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\GLib\bin\Debug\GLib.dll
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\GLib\bin\Debug\GLib.pdb
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\GLib\obj\Debug\GLib.dll
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\GLib\obj\Debug\GLib.pdb
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\GLib\obj\Debug\GLib.csprojResolveAssemblyReference.cache

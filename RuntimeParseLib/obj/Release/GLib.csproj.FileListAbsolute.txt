@@ -1,0 +1,4 @@
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\GLib\bin\Release\GLib.dll
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\GLib\bin\Release\GLib.pdb
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\GLib\obj\Release\GLib.dll
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\GLib\obj\Release\GLib.pdb

@@ -1,0 +1,7 @@
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\bin\Release\Test.exe
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\bin\Release\Test.pdb
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\bin\Release\GLib.dll
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\bin\Release\GLib.pdb
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\obj\x86\Release\Test.csprojResolveAssemblyReference.cache
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\obj\x86\Release\Test.exe
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\obj\x86\Release\Test.pdb

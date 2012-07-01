@@ -1,0 +1,14 @@
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\bin\Debug\Test.exe
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\bin\Debug\Test.pdb
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\bin\Debug\GLib.dll
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\bin\Debug\GLib.pdb
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\obj\x86\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\obj\x86\Debug\Test.exe
+C:\Users\Guido\documents\visual studio 2010\Projects\GLib\Test\obj\x86\Debug\Test.pdb
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\Test\obj\x86\Debug\Test.exe
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\Test\obj\x86\Debug\Test.pdb
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\Test\obj\x86\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\Test\bin\Debug\Test.exe
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\Test\bin\Debug\Test.pdb
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\Test\bin\Debug\GLib.dll
+C:\Users\Guido\Documents\Visual Studio 2010\Projects\RuntimeParseLib\Test\bin\Debug\GLib.pdb
