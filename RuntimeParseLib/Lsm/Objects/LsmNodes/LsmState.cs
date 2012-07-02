@@ -14,7 +14,6 @@ namespace RuntimeParseLib.Lsm
 {
     public class LsmState : ILsmExpressable
     {
-        LsmDocument _document;
         LsmActionCollection _defaultActions = new LsmActionCollection();
         LsmActionCollection _pastEndActions = new LsmActionCollection();
         LsmMatchRuleCollection _matchRules;
@@ -31,25 +30,6 @@ namespace RuntimeParseLib.Lsm
         {
             get { return _stateID; }
             set { _stateID = value; }
-        }
-
-        public LsmDocument Document
-        {
-            get { return _document; }
-            set
-            {
-                if (_document != null
-                    && _document.States.Contains(this))
-                    _document.States.Remove(this);
-
-                _document = value;
-
-                if (_document != null
-                    && !_document.States.Contains(this))
-                {
-                    _document.States.Add(this);
-                }
-            }
         }
 
         public LsmMatchRuleCollection MatchRules
@@ -83,6 +63,11 @@ namespace RuntimeParseLib.Lsm
                     Expression.Constant(this.ID)),
                 GetBodyExpression(lsmContext),
                 Expression.Empty());
+        }
+
+        public override string ToString()
+        {
+            return String.Format("State {0}", _stateID);
         }
     }
 }

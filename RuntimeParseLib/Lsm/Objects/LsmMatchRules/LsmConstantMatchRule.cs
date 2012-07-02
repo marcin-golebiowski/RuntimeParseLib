@@ -32,5 +32,10 @@ namespace RuntimeParseLib.Lsm
         {
             get { return _constant; }
         }
+
+        public override string ToString()
+        {
+            return string.Format("Match '{0}'", Constant);
+        }
     }
 }

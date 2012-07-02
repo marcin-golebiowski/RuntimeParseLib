@@ -45,8 +45,8 @@ namespace RuntimeParseLib.Lsm
             //LsmState identifierFirst = new LsmState();
             LsmState identifierRest = new LsmState();
 
-            LsmLambdaMatchRule alphaNumericRule = new LsmLambdaMatchRule((c)=>char.IsLetterOrDigit(c));
-            LsmLambdaMatchRule letterRule = new LsmLambdaMatchRule((c) => char.IsLetter(c));
+            LsmClassMatchRule alphaNumericRule = new LsmClassMatchRule(LsmCharacterClass.Alphanumeric);
+            LsmClassMatchRule letterRule = new LsmClassMatchRule(LsmCharacterClass.Letter);
 
             letterRule.Actions.Add(new LsmStateTransitionAction(identifierRest));
             letterRule.Actions.Add(new LsmMarkTokenStartAction());

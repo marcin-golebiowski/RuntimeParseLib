@@ -41,13 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LsmBuilder\LsmBuilder.cs" />
-    <Compile Include="LsmBuilder\LsmFormTypePair.cs" />
     <Compile Include="Lsm\Collections\LsmMatchRuleCollection.cs" />
     <Compile Include="Lsm\Collections\LsmActionCollection.cs" />
     <Compile Include="Lsm\Collections\LsmStateCollection.cs" />
     <Compile Include="Lsm\ILsmExpressable.cs" />
     <Compile Include="Lsm\LsmCommonExpressions.cs" />
+    <Compile Include="Lsm\LsmDocumentTextGenerator.cs" />
     <Compile Include="Lsm\LsmTokenizeFunc.cs" />
+    <Compile Include="Lsm\Objects\LsmMatchRules\LsmClassMatchRule.cs" />
     <Compile Include="Lsm\Objects\LsmMatchRules\LsmConstantMatchRule.cs" />
     <Compile Include="Lsm\Objects\LsmActions\LsmMarkTokenStartAction.cs" />
     <Compile Include="Lsm\Objects\LsmActions\LsmClearTokenAction.cs" />

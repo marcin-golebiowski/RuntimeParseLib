@@ -17,5 +17,10 @@ namespace RuntimeParseLib.Lsm
         {
             return LsmCommonExpressions.MarkTokenStart(lsmContext);
         }
+
+        public override string ToString()
+        {
+            return "Mark Position as Token Start";
+        }
     }
 }

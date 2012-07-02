@@ -17,5 +17,10 @@ namespace RuntimeParseLib.Lsm
         {
             return LsmCommonExpressions.AcceptChar(lsmContext);
         }
+
+        public override string ToString()
+        {
+            return "Accept Character";
+        }
     }
 }

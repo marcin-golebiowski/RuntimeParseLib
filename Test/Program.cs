@@ -50,6 +50,14 @@ namespace Test
             stateDoc.StartState = tokenStartState;
             */
 
+            using (TextWriter writer = File.CreateText(@"C:\Users\Guido\Desktop\LSMSource.txt"))
+            {
+                LsmDocumentTextGenerator gen = new LsmDocumentTextGenerator(writer);
+                gen.WriteDocument(builder.Document);
+                writer.Flush();
+            }
+
+
             LsmTokenizeFunction parseFunc
                 = builder.Document.BuildLexerFunction();
 

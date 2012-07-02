@@ -30,5 +30,10 @@ namespace RuntimeParseLib.Lsm
             get { return _newState; }
             set { _newState = value; }
         }
+
+        public override string ToString()
+        {
+            return String.Format("Transition to State {0}", Destination.ID);
+        }
     }
 }

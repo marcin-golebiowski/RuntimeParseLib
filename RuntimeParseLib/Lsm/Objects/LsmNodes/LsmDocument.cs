@@ -22,35 +22,13 @@ namespace RuntimeParseLib.Lsm
 
         public LsmDocument()
         {
-            _states.CollectionChanged += States_CollectionChanged;
+        
         }
 
         public int GetStateID()
         {
             return ++_lastProvidedStateID;
         }
-
-        public void States_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.Action == NotifyCollectionChangedAction.Add)
-                foreach (LsmState newState in e.NewItems)
-                {
-                    if (newState.Document != this)
-                        newState.Document = this;
-
-                    newState.ID = GetStateID();
-                }
-            else if (e.Action == NotifyCollectionChangedAction.Remove
-                || e.Action == NotifyCollectionChangedAction.Replace)
-                foreach (LsmState oldState in e.OldItems)
-                {
-                    if (oldState.Document == this)
-                        oldState.Document = null;
-                }
-            
-        }
-
-       
 
         public LsmState StartState
         {

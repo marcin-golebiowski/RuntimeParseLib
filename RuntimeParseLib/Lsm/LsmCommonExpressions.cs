@@ -168,5 +168,45 @@ namespace RuntimeParseLib.Lsm
                 lsmContext.tokenStartVariable,
                 lsmContext.charIndexVariable);
         }
+
+        public static Expression LetterMatch(LsmContext lsmContext)
+        {
+            return Expression.Call(
+                null,
+                typeof(char).GetMethod(
+                    "IsLetter",
+                    new[] { typeof(char) }),
+                lsmContext.currentCharVariable);
+        }
+
+        public static Expression DigitMatch(LsmContext lsmContext)
+        {
+            return Expression.Call(
+                null,
+                typeof(char).GetMethod(
+                    "IsDigit",
+                    new[] { typeof(char) }),
+                lsmContext.currentCharVariable);
+        }
+
+        public static Expression AlphaNumericMatch(LsmContext lsmContext)
+        {
+            return Expression.Call(
+                null,
+                typeof(char).GetMethod(
+                    "IsLetterOrDigit",
+                    new[] { typeof(char) }),
+                lsmContext.currentCharVariable);
+        }
+
+        public static Expression WhiteSpaceMatch(LsmContext lsmContext)
+        {
+            return Expression.Call(
+                null,
+                typeof(char).GetMethod(
+                    "IsWhiteSpace",
+                    new[] { typeof(char) }),
+                lsmContext.currentCharVariable);
+        }
     }
 }

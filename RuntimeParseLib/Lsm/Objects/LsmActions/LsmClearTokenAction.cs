@@ -17,5 +17,10 @@ namespace RuntimeParseLib.Lsm
         {
             return LsmCommonExpressions.ClearTokenText(lsmContext);
         }
+
+        public override string ToString()
+        {
+            return "Clear Token Text";
+        }
     }
 }

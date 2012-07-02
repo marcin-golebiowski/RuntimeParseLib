@@ -19,5 +19,10 @@ namespace RuntimeParseLib.Lsm
                 LsmCommonExpressions.ReadChar(lsmContext),
                 LsmCommonExpressions.IncrementCharIndex(lsmContext));
         }
+
+        public override string ToString()
+        {
+            return "Advance Character Position";
+        }
     }
 }

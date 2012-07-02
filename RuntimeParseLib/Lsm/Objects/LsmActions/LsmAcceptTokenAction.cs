@@ -24,5 +24,10 @@ namespace RuntimeParseLib.Lsm
         {
             _tokenTypeID = typeID;
         }
+
+        public override string ToString()
+        {
+            return String.Format("Accept Token as {0}", _tokenTypeID);
+        }
     }
 }

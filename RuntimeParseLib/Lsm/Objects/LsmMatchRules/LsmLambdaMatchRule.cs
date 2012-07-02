@@ -1,6 +1,12 @@
 ﻿/*
  * LsmLambdaMatchRule.cs
  * Author: Guido Arbia
+ * 
+ * I do not recommend using this class anymore.
+ * Token path builder classes will need to assess the specificity of a
+ * match rule to determine proper precedence, and the specificity of a
+ * lambda cannot be easily asessed. This file will be removed in the
+ * near future.
  */
 
 using System;
@@ -30,6 +36,11 @@ namespace RuntimeParseLib.Lsm
                     lsmContext, _matchFunc),
                 Actions.GetExpression(lsmContext),
                 Expression.Empty());
+        }
+
+        public override string ToString()
+        {
+            return ("(Non-Displayable)"); 
         }
     }
 }
