@@ -1,4 +1,6 @@
-﻿
+﻿/*
+ * 
+ */
 
 using System;
 using System.Collections.Generic;
@@ -48,7 +50,7 @@ namespace Test
             stateDoc.StartState = tokenStartState;
             */
 
-            Func<TextReader, List<LsmToken>> parseFunc
+            LsmTokenizeFunction parseFunc
                 = builder.Document.BuildLexerFunction();
 
             List<LsmToken> tokens;
@@ -57,7 +59,7 @@ namespace Test
             {
                 string stuff = Console.ReadLine();
                 using (StringReader reader = new StringReader(stuff))
-                    tokens = parseFunc(reader);
+                    parseFunc(reader, tokens = new List<LsmToken>());
 
                 foreach (LsmToken token in tokens)
                 {

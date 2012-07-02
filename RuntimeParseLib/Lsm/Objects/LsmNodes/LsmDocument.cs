@@ -63,7 +63,7 @@ namespace RuntimeParseLib.Lsm
             get { return _states; }
         }
 
-        public Func<TextReader, List<LsmToken>> BuildLexerFunction()
+        public LsmTokenizeFunction BuildLexerFunction()
         {
             LsmContext context = new LsmContext();
             LabelTarget breakTarget = Expression.Label();
@@ -84,14 +84,13 @@ namespace RuntimeParseLib.Lsm
                             Expression.Break(breakTarget),
                             Expression.Empty())),
                     breakTarget),
-                    context.tokenListVariable);
+                    context.currentStateVariable);
 
-
-
-             Expression<Func<TextReader, List<LsmToken>>> finalExpression
-                = Expression.Lambda<Func<TextReader, List<LsmToken>>>(
+             Expression<LsmTokenizeFunction> finalExpression
+                = Expression.Lambda<LsmTokenizeFunction>(
                     block,
-                    context.textReaderParameter);
+                    context.textReaderParameter,
+                    context.tokenListVariable);
 
             return finalExpression.Compile();
         }
