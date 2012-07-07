@@ -16,6 +16,7 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            /*
             LsmBuilder builder = new LsmBuilder();
 
             builder.CreateStringTokenPath("H", 1, true);
@@ -25,7 +26,7 @@ namespace Test
             builder.CreateStringTokenPath("{", 5, false);
             builder.CreateStringTokenPath("}", 6, false);
             builder.ApplyIdentifierPaths(-1);
-
+            */
             /*
             LsmDocument stateDoc = new LsmDocument();
             LsmState tokenStartState = new LsmState();
@@ -50,16 +51,31 @@ namespace Test
             stateDoc.StartState = tokenStartState;
             */
 
+            LsmDocument doc = new LsmDocument();
+            LsmState st = new LsmState();
+            LsmMatchRule alphaNum = new LsmClassMatchRule(LsmCharacterClass.Alphanumeric);
+            alphaNum.Actions.Add(new LsmAcceptCharAction());
+            alphaNum.Actions.Add(new LsmAdvanceAction());
+            LsmMatchRule thirdChar = new LsmCharIndexMatchRule(2);
+            thirdChar.Actions.Add(new LsmAcceptTokenAction(10));
+            thirdChar.Actions.Add(new LsmAdvanceAction());
+            thirdChar.Actions.Add(new LsmClearTokenTextAction());
+
+            st.MatchRules.Add(alphaNum);
+            st.MatchRules.Add(thirdChar);
+            doc.States.Add(st);
+            doc.StartState = st;
+
             using (TextWriter writer = File.CreateText(@"C:\Users\Guido\Desktop\LSMSource.txt"))
             {
                 LsmDocumentTextGenerator gen = new LsmDocumentTextGenerator(writer);
-                gen.WriteDocument(builder.Document);
+                gen.WriteDocument(doc);
                 writer.Flush();
             }
 
 
             LsmTokenizeFunction parseFunc
-                = builder.Document.BuildLexerFunction();
+                = doc.BuildLexerFunction();
 
             List<LsmToken> tokens;
 

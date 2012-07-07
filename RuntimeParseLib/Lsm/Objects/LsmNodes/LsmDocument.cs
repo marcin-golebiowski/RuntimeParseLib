@@ -57,6 +57,7 @@ namespace RuntimeParseLib.Lsm
                             Expression.Empty(),
                             LsmCommonExpressions.AssignCurrentChar(context)),
                         States.GetExpression(context),
+                        LsmCommonExpressions.UpdateCharIndexInState(context),
                         Expression.IfThenElse(
                             LsmCommonExpressions.EndOfStream(context),
                             Expression.Break(breakTarget),

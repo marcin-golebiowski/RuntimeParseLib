@@ -7,6 +7,8 @@
  * match rule to determine proper precedence, and the specificity of a
  * lambda cannot be easily asessed. This file will be removed in the
  * near future.
+ * 
+ * Note: This class can no longer be instantiated.
  */
 
 using System;
@@ -21,7 +23,11 @@ namespace RuntimeParseLib.Lsm
     {
         Func<char, bool> _matchFunc = null;
 
-        public LsmLambdaMatchRule(Func<char, bool> matchFunc)
+        private LsmLambdaMatchRule()
+        {
+        }
+
+        private LsmLambdaMatchRule(Func<char, bool> matchFunc)
         {
             if (matchFunc == null)
                 throw new ArgumentNullException("matchFunc");

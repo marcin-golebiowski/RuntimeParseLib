@@ -11,36 +11,41 @@ using System.Linq.Expressions;
 
 namespace RuntimeParseLib.Lsm
 {
-    public class LsmConstantMatchRule : LsmMatchRule, ILsmExpressable
-    {
-        char _constant;
 
-        public LsmConstantMatchRule(char constant)
+    public class LsmCharIndexMatchRule : LsmMatchRule, ILsmExpressable
+    {
+        int _charIndex;
+
+        public LsmCharIndexMatchRule(int charIndex)
         {
-            _constant = constant;
+        
+            _charIndex = charIndex;
         }
 
+    
         public Expression GetExpression(LsmContext lsmContext)
         {
             return Expression.IfThenElse(
-                LsmCommonExpressions.CharMatch(lsmContext, _constant),
+                Expression.Equal(
+                    lsmContext.charIndexInStateVariable,
+                    Expression.Constant(_charIndex)),
                 Actions.GetExpression(lsmContext),
                 Expression.Empty());
         }
 
-        public char Constant
+        public int CharIndex
         {
-            get { return _constant; }
+            get { return _charIndex; }
         }
 
         public override string ToString()
         {
-            return string.Format("Match '{0}'", Constant);
+            return string.Format("Char Index in State is {0}", _charIndex);
         }
 
         public override int GetEvaluationOrder()
         {
-            return 0;
+            return -1;
         }
     }
 }

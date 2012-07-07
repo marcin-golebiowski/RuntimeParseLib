@@ -179,6 +179,22 @@ namespace RuntimeParseLib.Lsm
                 lsmContext.currentCharVariable);
         }
 
+        public static Expression UpdateCharIndexInState(LsmContext lsmContext)
+        {
+            return Expression.IfThenElse(
+                Expression.Equal(
+                    lsmContext.currentStateVariable,
+                    lsmContext.lastStateVariable),
+                Expression.PreIncrementAssign(lsmContext.charIndexInStateVariable),
+                Expression.Block(
+                    Expression.Assign(
+                        lsmContext.charIndexInStateVariable,
+                        Expression.Constant(0)),
+                    Expression.Assign(
+                        lsmContext.lastStateVariable,
+                        lsmContext.currentStateVariable)));
+        }
+
         public static Expression DigitMatch(LsmContext lsmContext)
         {
             return Expression.Call(

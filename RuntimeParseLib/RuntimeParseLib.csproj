@@ -48,6 +48,7 @@
     <Compile Include="Lsm\LsmCommonExpressions.cs" />
     <Compile Include="Lsm\LsmDocumentTextGenerator.cs" />
     <Compile Include="Lsm\LsmTokenizeFunc.cs" />
+    <Compile Include="Lsm\Objects\LsmMatchRules\LsmCharIndexMatch.cs" />
     <Compile Include="Lsm\Objects\LsmMatchRules\LsmClassMatchRule.cs" />
     <Compile Include="Lsm\Objects\LsmMatchRules\LsmConstantMatchRule.cs" />
     <Compile Include="Lsm\Objects\LsmActions\LsmMarkTokenStartAction.cs" />
@@ -58,7 +59,7 @@
     <Compile Include="Lsm\Objects\LsmActions\LsmAdvanceAction.cs" />
     <Compile Include="Lsm\Objects\LsmMatchRules\LsmLambdaMatchRule.cs" />
     <Compile Include="Lsm\Objects\LsmContext.cs" />
-    <Compile Include="Lsm\Objects\LsmNodes\LsmMatchRule.cs" />
+    <Compile Include="Lsm\Objects\LsmMatchRules\LsmMatchRule.cs" />
     <Compile Include="Lsm\Objects\LsmNodes\LsmAction.cs" />
     <Compile Include="Lsm\Objects\LsmNodes\LsmDocument.cs" />
     <Compile Include="Lsm\Objects\LsmNodes\LsmState.cs" />

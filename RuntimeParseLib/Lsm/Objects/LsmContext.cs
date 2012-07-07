@@ -39,11 +39,18 @@ namespace RuntimeParseLib.Lsm
         public ParameterExpression tokenStartVariable
             = Expression.Parameter(typeof(int), "tokenStartIndex");
 
+        public ParameterExpression charIndexInStateVariable
+            = Expression.Parameter(typeof(int), "charIndexInState");
+
+        public ParameterExpression lastStateVariable
+            = Expression.Parameter(typeof(int), "LastState");
+
         public IEnumerable<ParameterExpression> GetLocalVariables()
         {
             return new [] { tokenTextVariable, charIndexVariable,
                         currentStateVariable, peekValueVariable, 
-                        currentCharVariable, tokenStartVariable };
+                        currentCharVariable, tokenStartVariable,
+                        charIndexInStateVariable, lastStateVariable };
         }
 
         public BlockExpression GetInitializationBlock(int startStateID)
@@ -58,6 +65,12 @@ namespace RuntimeParseLib.Lsm
                 Expression.Assign(
                     tokenStartVariable,
                     Expression.Constant(0)),
+                Expression.Assign(
+                    charIndexInStateVariable,
+                    Expression.Constant(0)),
+                Expression.Assign(
+                    lastStateVariable,
+                    Expression.Constant(startStateID)),
                 Expression.Assign(
                     currentStateVariable,
                     Expression.Constant(startStateID)));

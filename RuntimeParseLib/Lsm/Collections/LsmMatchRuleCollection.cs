@@ -26,9 +26,15 @@ namespace RuntimeParseLib.Lsm
             if (this.Count == 0)
                 return _state.DefaultActions.GetExpression(lsmContext);
 
+            IEnumerable<ILsmExpressable> matchRules 
+                = (from matchRule 
+                       in this
+                       where (matchRule is ILsmExpressable)
+                       orderby matchRule.GetEvaluationOrder() ascending
+                       select matchRule as ILsmExpressable);
+
             return LsmCommonExpressions.IfElseChain(
-                (this.Where((mr) => mr is ILsmExpressable)
-                    .Select((mr)=> mr as ILsmExpressable)),
+                matchRules,
                 _state.DefaultActions.GetExpression(lsmContext),      
                 lsmContext);
         }

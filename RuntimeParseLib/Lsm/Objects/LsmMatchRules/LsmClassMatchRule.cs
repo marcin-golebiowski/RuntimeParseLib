@@ -62,5 +62,22 @@ namespace RuntimeParseLib.Lsm
         {
             return string.Format("Match Class {0}", _characterClass);
         }
+
+        public override int GetEvaluationOrder()
+        {
+            switch (_characterClass)
+            {
+                case LsmCharacterClass.WhiteSpace:
+                    return 1;
+                case LsmCharacterClass.Letter:
+                    return 1;
+                case LsmCharacterClass.Digit:
+                    return 1;
+                case LsmCharacterClass.Alphanumeric:
+                    return 2;
+                default:
+                    return -1;
+            }
+        }
     }
 }
