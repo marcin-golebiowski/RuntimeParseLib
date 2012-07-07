@@ -47,6 +47,7 @@
     <Compile Include="Lsm\ILsmExpressable.cs" />
     <Compile Include="Lsm\LsmCommonExpressions.cs" />
     <Compile Include="Lsm\LsmDocumentTextGenerator.cs" />
+    <Compile Include="Lsm\LsmStatePathBuilder.cs" />
     <Compile Include="Lsm\LsmTokenizeFunc.cs" />
     <Compile Include="Lsm\Objects\LsmMatchRules\LsmCharIndexMatch.cs" />
     <Compile Include="Lsm\Objects\LsmMatchRules\LsmClassMatchRule.cs" />

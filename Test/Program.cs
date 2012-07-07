@@ -50,7 +50,7 @@ namespace Test
             stateDoc.States.Add(consumeLetters);
             stateDoc.StartState = tokenStartState;
             */
-
+            /*
             LsmDocument doc = new LsmDocument();
             LsmState st = new LsmState();
             LsmMatchRule alphaNum = new LsmClassMatchRule(LsmCharacterClass.Alphanumeric);
@@ -65,6 +65,27 @@ namespace Test
             st.MatchRules.Add(thirdChar);
             doc.States.Add(st);
             doc.StartState = st;
+            */
+            LsmDocument doc = new LsmDocument();
+            LsmState rootState = new LsmState();
+            LsmStatePathBuilder path = new LsmStatePathBuilder(doc, rootState);
+            path.AppendText("Cat");
+            path.CompleteToken(1);
+            path.MoveToState(rootState);
+            path.AppendText("Dog");
+            path.CompleteToken(2);
+            path.MoveToState(rootState);
+            path.AppendText("Dog");
+            path.AppendCharacterClass(LsmCharacterClass.Alphanumeric);
+            path.AppendCharacterClassLoop(LsmCharacterClass.Alphanumeric);
+            path.CompleteToken(-1);
+            path.MoveToState(rootState);
+
+            //Note: Does not loop.
+            path.AppendCharacterClass(LsmCharacterClass.WhiteSpace);
+
+            doc.States.Add(rootState);
+            doc.StartState = rootState;
 
             using (TextWriter writer = File.CreateText(@"C:\Users\Guido\Desktop\LSMSource.txt"))
             {

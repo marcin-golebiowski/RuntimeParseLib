@@ -39,20 +39,29 @@ namespace RuntimeParseLib.Lsm
                 lsmContext);
         }
 
-        //Method untested.
         public LsmConstantMatchRule GetRuleByConstant(char character)
         {
-            foreach (LsmMatchRule matchRule in this)
-            {
-                LsmConstantMatchRule constantRule = matchRule as LsmConstantMatchRule;
-                if (constantRule == null)
-                    continue;
+            IEnumerable<LsmConstantMatchRule> constantMatchRules
+                = (from matchRule
+                   in this
+                   where matchRule is LsmConstantMatchRule
+                   select matchRule as LsmConstantMatchRule); 
+           
+            return constantMatchRules.SingleOrDefault(
+                constantMatchRule => constantMatchRule.Constant == character);
+        }
 
-                if (constantRule.Constant == character)
-                    return constantRule;
-            }
+        //Method untested.
+        public LsmClassMatchRule GetRuleByClass(LsmCharacterClass charClass)
+        {
+            IEnumerable<LsmClassMatchRule> classMatchRules
+                = (from matchRule
+                   in this
+                   where matchRule is LsmClassMatchRule
+                   select matchRule as LsmClassMatchRule);
 
-            return null;
+            return classMatchRules.SingleOrDefault(
+                classMatchRule => classMatchRule.CharacterClass == charClass);
         }
     }
 }
